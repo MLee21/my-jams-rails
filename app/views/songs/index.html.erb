@@ -1,0 +1,5 @@
+<%= link_to "Add a new song to the playlist", new_song_path %>
+<% @songs.each do |song| %>
+ <h2> <%= link_to song.title, song_path(song)%> </h2>
+  <%= song.title %> 
+<% end %>

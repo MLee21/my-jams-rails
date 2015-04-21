@@ -1,0 +1,11 @@
+<h1>Welcome, <%= current_user.first_name %>!</h1>
+<h2><%= current_user.first_name %>'s Playlist</h2>
+
+<% @songs.all.each do |song| %>
+<p><%= song.title %></p><%= button_to "Edit", edit_song_path(song), method: :get %>
+<%= button_to "Delete", song_path(song), method: :delete %>
+<p><%= song.artist %></p>
+<% end %>
+
+<%= button_to "Add Song", new_song_path, method: :get %>
+<%= button_to "Delete All", delete_all_path, method: :delete %>

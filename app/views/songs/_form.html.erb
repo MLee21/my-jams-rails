@@ -1,0 +1,13 @@
+<%= form_for(@song) do |f|%>
+  <p>Title:</p>
+  <%= f.text_field :title %>
+  <p>Artist:</p>
+  <%= f.text_field :artist %> 
+  <p><%= f.submit %></p>
+<% end %>
+
+<% flash.each do |type, message| %>
+<div class="alert flash <%= type %>">
+  <p><%= message %></p>
+</div>
+<% end %>
